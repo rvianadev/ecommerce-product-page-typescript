@@ -4,6 +4,10 @@ module.exports = {
   theme: {
     colors: {
       'header-line': '#E4E9F2',
+      primary: '#FF7E1B',
+      black: '#1D2026',
+      gray: '#69707D',
+      'gray-50': '#B6BCC8',
     },
     extend: {
       spacing: {
@@ -13,6 +17,8 @@ module.exports = {
       },
       width: {
         desktop: '69.4rem', // Container desktop width
+        'product-container': '63.4375rem', // Product container width
+        '2.2/5': '44%',
       },
     },
   },
