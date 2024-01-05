@@ -4,6 +4,8 @@ type Props = {
 
 export function Container({ children }: Props) {
   return (
-    <main className="container mx-auto border-2 w-desktop">{children}</main>
+    <main className="container mx-auto w-desktop relative mt-7">
+      {children}
+    </main>
   );
 }
