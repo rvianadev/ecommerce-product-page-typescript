@@ -1,11 +1,11 @@
 import './index.css';
 
-import { Container, Title } from 'components';
+import { Container, Header } from 'components';
 
 export function App() {
   return (
     <Container>
-      <Title />
+      <Header />
     </Container>
   );
 }

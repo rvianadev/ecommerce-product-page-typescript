@@ -3,5 +3,7 @@ type Props = {
 };
 
 export function Container({ children }: Props) {
-  return <main className="container mx-auto border-2">{children}</main>;
+  return (
+    <main className="container mx-auto border-2 w-desktop">{children}</main>
+  );
 }
