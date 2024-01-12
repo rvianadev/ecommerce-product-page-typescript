@@ -29,20 +29,20 @@ export function ProductInformationContainer() {
           $250.00
         </span>
       </div>
-      <div>
-        <div>
+      <div className="flex justify-between">
+        <div className="flex justify-around items-center rounded-[0.625rem] h-14 bg-[#F6F8FD] w-[35.28%] max-w-[9.8125rem]">
           <button>
             <img src={iconMinus} alt="icon minus" />
           </button>
-          <span></span>
+          <span>0</span>
           <button>
             <img src={iconPlus} alt="icon plus" />
           </button>
         </div>
 
-        <button>
+        <button className="flex justify-evenly items-center h-14 bg-primary rounded-[0.625rem] w-[61.12%] max-w-[17rem]">
           <img src={iconCart} alt="icon cart" />
-          <span>Add to cart</span>
+          <span className="text-white font-bold">Add to cart</span>
         </button>
       </div>
     </div>
