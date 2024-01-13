@@ -6,3 +6,5 @@ export * from './NavUser';
 export * from './ProductContainer';
 export * from './ProductImageContainer';
 export * from './ProductInformationContainer';
+export * from './ProductsList';
+export * from './ProductsListCard';
