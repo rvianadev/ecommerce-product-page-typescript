@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { App } from 'App';
-import { ProductContainer } from 'components';
+import { Sneaker } from 'components';
 
 export const routes = createBrowserRouter([
   {
@@ -14,7 +14,7 @@ export const routes = createBrowserRouter([
     children: [
       {
         path: 'product/sneaker',
-        element: <ProductContainer />,
+        element: <Sneaker />,
       },
       {
         path: 'product/:productId',

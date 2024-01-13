@@ -1,6 +1,6 @@
 import { ProductImageContainer, ProductInformationContainer } from 'components';
 
-export function ProductContainer() {
+export function Sneaker() {
   return (
     <div className="container w-product-container mx-auto flex justify-between">
       <ProductImageContainer />
