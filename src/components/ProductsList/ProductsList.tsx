@@ -26,21 +26,22 @@ export function ProductsList() {
     getProductList();
   }, []);
 
-  console.log(productsList);
+  // console.log(productsList);
 
   return (
     <ListContext.Provider value={{ productsList, setProductsList }}>
-      {productsList.map((value, index) => {
-        return (
-          <ProductsListCard
-            key={index}
-            productId={value.id}
-            thumbnailUrl={value.thumbnailUrl}
-            url={value.url}
-          />
-        );
-      })}
-      <p>Algum conteúdo aqui</p>
+      <div className="grid grid-cols-5">
+        {productsList.map((value, index) => {
+          return (
+            <ProductsListCard
+              key={index}
+              productId={value?.id}
+              thumbnailUrl={value?.thumbnailUrl}
+              url={value?.url}
+            />
+          );
+        })}
+      </div>
     </ListContext.Provider>
   );
 }

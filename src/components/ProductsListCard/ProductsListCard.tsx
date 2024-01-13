@@ -1,8 +1,8 @@
-export function ProductsListCard({ props }: any) {
+export function ProductsListCard({ productId, thumbnailUrl }: any) {
   return (
     <div>
-      <h2>Product {props.productId}</h2>
-      <img src={props.thumbnailUrl} alt="Product thumbnail" />
+      <h2>Product {productId}</h2>
+      <img src={thumbnailUrl} alt="Product thumbnail" />
     </div>
   );
 }
