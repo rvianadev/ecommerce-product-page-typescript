@@ -23,11 +23,15 @@ export function ProductsList() {
     });
   };
 
+  const storageItem = (element: IProduct, index: number) => {
+    localStorage.setItem(`Product ${index + 1}`, JSON.stringify(element));
+  };
+
+  productsList.forEach(storageItem);
+
   useEffect(() => {
     getProductList();
   }, []);
-
-  // console.log(productsList);
 
   return (
     <ListContext.Provider value={{ productsList, setProductsList }}>
