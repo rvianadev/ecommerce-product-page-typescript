@@ -1,17 +1,17 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { App } from 'App';
-import { Sneaker } from 'components';
+import { ProductsList, Sneaker } from 'components';
 
 export const routes = createBrowserRouter([
   {
     path: '/',
-    element: (
-      <div>
-        <App />
-      </div>
-    ),
+    element: <App />,
     children: [
+      {
+        path: '/',
+        element: <ProductsList />,
+      },
       {
         path: 'product/sneaker',
         element: <Sneaker />,
