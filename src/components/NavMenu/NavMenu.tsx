@@ -6,7 +6,7 @@ export function NavMenu() {
       <img src={logo} alt="sneakers logo" className="h-5 pr-14" />
       <ul className="flex gap-8">
         <li>
-          <a href="#" className="text-gray">
+          <a href="/" className="text-gray">
             Collections
           </a>
         </li>
