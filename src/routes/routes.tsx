@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { App } from 'App';
-import { ProductsList, Sneaker } from 'components';
+import { ProductDetails, ProductsList, Sneaker } from 'components';
 
 export const routes = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: 'product/:productId',
-        element: <h1 className="text-5xl">Detalhes de um produto qualquer</h1>,
+        element: <ProductDetails />,
       },
     ],
   },

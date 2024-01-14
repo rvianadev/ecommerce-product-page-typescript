@@ -4,6 +4,7 @@ import api from 'api/api';
 import { ListContext } from 'contexts';
 
 import { ProductsListCard } from 'components/ProductsListCard';
+import { SneakerCard } from 'components/SneakerCard';
 
 interface IProduct {
   albumId?: number;
@@ -31,6 +32,7 @@ export function ProductsList() {
   return (
     <ListContext.Provider value={{ productsList, setProductsList }}>
       <div className="grid grid-cols-5 gap-4">
+        <SneakerCard />
         {productsList.map((value, index) => {
           return (
             <ProductsListCard
