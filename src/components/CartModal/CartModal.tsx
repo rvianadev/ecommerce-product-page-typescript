@@ -1,11 +1,15 @@
 export function CartModal() {
   return (
-    <div className="absolute -right-[5rem] top-[4.13rem] w-[22.5rem] h-64 shadow-2xl bg-white rounded-[0.625rem]">
-      <header>
-        <span>Cart</span>
+    <div className="flex flex-col absolute -right-[5rem] top-[4.13rem] w-[22.5rem] h-64 shadow-2xl bg-white rounded-[0.625rem]">
+      <header className="after:absolute after:content-[''] after:bg-header-line after:w-full after:h-[0.0625rem] after:inline-block">
+        <span className="pt-6 pl-6 pb-[1.69rem] block text-black text-base font-bold">
+          Cart
+        </span>
       </header>
-      <div>
-        <span>Your cart is empty.</span>
+      <div className="flex justify-center items-center flex-1">
+        <span className="text-base font-bold leading-[1.625rem] text-gray">
+          Your cart is empty.
+        </span>
       </div>
     </div>
   );
