@@ -35,7 +35,7 @@ export function ProductsList() {
 
   return (
     <ListContext.Provider value={{ productsList, setProductsList }}>
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-5 gap-8">
         <SneakerCard />
         {productsList.map((value, index) => {
           return (
