@@ -1,3 +1,4 @@
+export * from './CartModal';
 export * from './Container';
 export * from './Header';
 export * from './NavMenu';
