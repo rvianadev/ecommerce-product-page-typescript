@@ -12,11 +12,7 @@ export function ProductImageContainer() {
   return (
     <div className="flex flex-col gap-8 w-2.2/5 max-w-[27.8125rem] rounded-[0.9375rem]">
       <div>
-        <img
-          src={imgProduct1}
-          alt="Image product"
-          className="rounded-[0.9375rem]"
-        />
+        <img src={imgProduct1} alt="Product" className="rounded-[0.9375rem]" />
       </div>
       <div className="flex gap-[1.94rem] rounded-[0.625rem]">
         <img

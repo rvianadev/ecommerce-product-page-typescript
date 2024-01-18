@@ -1,3 +1,5 @@
+import { useCart } from 'hooks';
+
 export function CartModal() {
   return (
     <div className="flex flex-col absolute -right-[5rem] top-[4.13rem] w-[22.5rem] h-64 shadow-2xl bg-white rounded-[0.625rem]">
