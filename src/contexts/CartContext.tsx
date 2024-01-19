@@ -1,17 +1,13 @@
-import { createContext, useState, ReactNode } from 'react';
+import { createContext, useState } from 'react';
 
-interface ICartContext {
-  isOpen: boolean;
-  toggleCart: () => {};
-}
+const CartContextData = {
+  isOpen: boolean,
+  toggleCart: () => {},
+};
 
-interface ICartProviderProps {
-  children: ReactNode;
-}
+export const CartContext = createContext(CartContextData);
 
-export const CartContext = createContext<ICartContext | undefined>(undefined);
-
-export function CartProvider({ children }: ICartProviderProps) {
+export function CartProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleCart = () => {
