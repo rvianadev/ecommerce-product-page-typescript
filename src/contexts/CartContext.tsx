@@ -1,11 +1,14 @@
 import { createContext, useState } from 'react';
 
-const CartContextData = {
+export interface ICartContextData {
+  isOpen: boolean;
+  toggleCart: () => void;
+}
+
+export const CartContext = createContext<ICartContextData>({
   isOpen: false,
   toggleCart: () => {},
-};
-
-export const CartContext = createContext(CartContextData);
+});
 
 export function CartProvider({ children }: any) {
   const [isOpen, setIsOpen] = useState(false);

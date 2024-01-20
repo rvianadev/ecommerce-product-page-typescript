@@ -6,7 +6,12 @@ export function NavUser() {
 
   return (
     <nav className="flex items-center gap-12">
-      <a href="#" onClick={() => {}}>
+      <a
+        href="#"
+        onClick={() => {
+          toggleCart();
+        }}
+      >
         <svg
           width="22"
           height="20"

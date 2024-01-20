@@ -22,7 +22,7 @@ export function ProductDetails() {
   }, [productId]);
 
   return (
-    <div className="flex flex-col items-center pt-[5.62rem]">
+    <div className="flex flex-col items-center pt-[1.62rem]">
       <h2 className="mb-[2rem] text-4xl">Product {productId}</h2>
       {url && (
         <img
