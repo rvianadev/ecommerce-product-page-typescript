@@ -24,6 +24,7 @@ export function NavUser() {
           />
         </svg>
       </a>
+      <span>{amount}</span>
       <a href="#">
         <img
           src={avatar}
