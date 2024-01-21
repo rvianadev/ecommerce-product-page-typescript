@@ -1,23 +1,7 @@
-import { useState } from 'react';
-
-import iconMinus from '../../assets/images/icon-minus.svg';
-import iconPlus from '../../assets/images/icon-plus.svg';
-import iconCart from '../../assets/images/icon-cart.svg';
+import { useCart } from 'hooks';
 
 export function ProductInformationContainer() {
-  const [amount, setAmount] = useState(0);
-
-  const increaseAmount = () => {
-    if (amount < 20) {
-      setAmount(amount + 1);
-    }
-  };
-
-  const decreaseAmount = () => {
-    if (amount > 0) {
-      setAmount(amount - 1);
-    }
-  };
+  const { amount, increaseAmount, decreaseAmount } = useCart();
 
   return (
     <div className="flex flex-col justify-center w-2.2/5 max-w-[27.8125rem]">
@@ -47,25 +31,53 @@ export function ProductInformationContainer() {
       </div>
       <div className="flex justify-between">
         <div className="flex justify-around items-center rounded-[0.625rem] h-14 bg-[#F6F8FD] w-[35.28%] max-w-[9.8125rem]">
-          <button>
-            <a
-              href="#"
-              onClick={() => {
-                decreaseAmount();
-              }}
-            >
-              <img src={iconMinus} alt="icon minus" />
+          <button
+            className="p-4"
+            onClick={() => {
+              decreaseAmount();
+            }}
+          >
+            <a href="#">
+              <svg
+                width="12"
+                height="4"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                className="fill-primary hover:fill-primary-light"
+              >
+                <defs>
+                  <path
+                    d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                    id="a"
+                  />
+                </defs>
+                <use fillRule="nonzero" xlinkHref="#a" />
+              </svg>
             </a>
           </button>
-          <span className="font-bold">{amount}</span>
-          <button>
+          <span className="font-bold data-amount">{amount}</span>
+          <button className="p-4">
             <a href="#" onClick={() => increaseAmount()}>
-              <img src={iconPlus} alt="icon plus" />
+              <svg
+                width="12"
+                height="12"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                className="fill-primary hover:fill-primary-light"
+              >
+                <defs>
+                  <path
+                    d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                    id="b"
+                  />
+                </defs>
+                <use fill-rule="nonzero" xlinkHref="#b" />
+              </svg>
             </a>
           </button>
         </div>
 
-        <button className="flex justify-evenly items-center h-14 bg-primary rounded-[0.625rem] w-[61.12%] max-w-[17rem]">
+        <button className="flex justify-evenly items-center h-14 bg-primary hover:bg-primary-light rounded-[0.625rem] w-[61.12%] max-w-[17rem]">
           <svg
             width="22"
             height="20"
