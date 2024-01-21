@@ -2,7 +2,7 @@ import { useCart } from 'hooks';
 import avatar from '../../assets/images/image-avatar.png';
 
 export function NavUser() {
-  const { amount, cartAmount, toggleCart } = useCart();
+  const { cartAmount, toggleCart } = useCart();
 
   return (
     <nav className="relative flex items-center gap-12">

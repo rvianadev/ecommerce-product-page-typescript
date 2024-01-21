@@ -30,9 +30,7 @@ export function CartProvider({ children }: any) {
   };
 
   const increaseAmount = () => {
-    if (amount < 20) {
-      setAmount(amount + 1);
-    }
+    setAmount(amount + 1);
   };
 
   const decreaseAmount = () => {
@@ -42,9 +40,7 @@ export function CartProvider({ children }: any) {
   };
 
   const handleCart = () => {
-    if (cartAmount + amount < 21) {
-      setCartAmount(amount + cartAmount);
-    }
+    setCartAmount(amount + cartAmount);
   };
 
   return (
