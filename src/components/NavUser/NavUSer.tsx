@@ -2,10 +2,10 @@ import { useCart } from 'hooks';
 import avatar from '../../assets/images/image-avatar.png';
 
 export function NavUser() {
-  const { amount, toggleCart } = useCart();
+  const { amount, cartAmount, toggleCart } = useCart();
 
   return (
-    <nav className="flex items-center gap-12">
+    <nav className="relative flex items-center gap-12">
       <a
         href="#"
         onClick={() => {
@@ -24,7 +24,13 @@ export function NavUser() {
           />
         </svg>
       </a>
-      <span>{amount}</span>
+
+      {cartAmount > 0 && (
+        <span className="block text-[0.75rem] text-white font-bold px-2 rounded-full bg-primary absolute top-1.5 left-2">
+          {cartAmount}
+        </span>
+      )}
+
       <a href="#">
         <img
           src={avatar}

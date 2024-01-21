@@ -1,7 +1,7 @@
 import { useCart } from 'hooks';
 
 export function ProductInformationContainer() {
-  const { amount, increaseAmount, decreaseAmount } = useCart();
+  const { amount, increaseAmount, decreaseAmount, handleCart } = useCart();
 
   return (
     <div className="flex flex-col justify-center w-2.2/5 max-w-[27.8125rem]">
@@ -71,13 +71,18 @@ export function ProductInformationContainer() {
                     id="b"
                   />
                 </defs>
-                <use fill-rule="nonzero" xlinkHref="#b" />
+                <use fillRule="nonzero" xlinkHref="#b" />
               </svg>
             </a>
           </button>
         </div>
 
-        <button className="flex justify-evenly items-center h-14 bg-primary hover:bg-primary-light rounded-[0.625rem] w-[61.12%] max-w-[17rem]">
+        <button
+          className="flex justify-evenly items-center h-14 bg-primary hover:bg-primary-light rounded-[0.625rem] w-[61.12%] max-w-[17rem]"
+          onClick={() => {
+            handleCart();
+          }}
+        >
           <svg
             width="22"
             height="20"
