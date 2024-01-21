@@ -56,8 +56,8 @@ export function ProductInformationContainer() {
             </a>
           </button>
           <span className="font-bold data-amount">{amount}</span>
-          <button className="p-4">
-            <a href="#" onClick={() => increaseAmount()}>
+          <button className="p-4" onClick={() => increaseAmount()}>
+            <a href="#">
               <svg
                 width="12"
                 height="12"
