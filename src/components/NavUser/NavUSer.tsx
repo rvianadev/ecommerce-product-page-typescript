@@ -37,7 +37,7 @@ export function NavUser() {
         <img
           src={avatar}
           alt="user avatar"
-          className="size-12.5 hover:border-2 hover:border-primary hover:rounded-full"
+          className="size-12.5 border-2 border-white rounded-full hover:border-primary"
         />
       </a>
     </nav>
