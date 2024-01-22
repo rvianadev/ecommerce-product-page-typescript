@@ -23,7 +23,7 @@ export function ProductImageContainer() {
           <img src={img1} alt="Product" className="rounded-[0.9375rem]" />
         ) : null}
         {isImg2Visible ? (
-          <img src={img2} alt="Product" className="rounde-[0.9375rem]" />
+          <img src={img2} alt="Product" className="rounded-[0.9375rem]" />
         ) : null}
         {isImg3Visible ? (
           <img src={img3} alt="Product" className="rounded-[0.9375rem]" />
