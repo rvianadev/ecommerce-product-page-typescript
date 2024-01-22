@@ -2,7 +2,9 @@ import { useCart } from 'hooks';
 import avatar from '../../assets/images/image-avatar.png';
 
 export function NavUser() {
-  const { cartAmount, toggleCart } = useCart();
+  const { toggleCart } = useCart();
+
+  const currentAmount = localStorage.getItem('cartAmount');
 
   return (
     <nav className="relative flex items-center gap-12">
@@ -25,9 +27,9 @@ export function NavUser() {
         </svg>
       </a>
 
-      {cartAmount > 0 && (
+      {currentAmount && (
         <span className="block text-[0.75rem] text-white font-bold px-2 rounded-full bg-primary absolute top-1.5 left-2">
-          {cartAmount}
+          {currentAmount}
         </span>
       )}
 

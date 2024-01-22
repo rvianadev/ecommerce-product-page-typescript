@@ -23,7 +23,11 @@ export const CartContext = createContext<ICartContextData>({
 export function CartProvider({ children }: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [amount, setAmount] = useState(0);
-  const [cartAmount, setCartAmount] = useState(amount);
+
+  const storedCartAmount = localStorage.getItem('cartAmount');
+  const [cartAmount, setCartAmount] = useState(
+    storedCartAmount ? parseInt(storedCartAmount, 10) : 0
+  );
 
   const toggleCart = () => {
     setIsOpen(!isOpen);
@@ -40,7 +44,11 @@ export function CartProvider({ children }: any) {
   };
 
   const handleCart = () => {
-    setCartAmount(amount + cartAmount);
+    const currentAmount = localStorage.getItem('cartAmount');
+
+    const total = amount + (currentAmount ? parseInt(currentAmount, 10) : 0);
+    setCartAmount(total);
+    localStorage.setItem('cartAmount', `${total}`);
   };
 
   return (
