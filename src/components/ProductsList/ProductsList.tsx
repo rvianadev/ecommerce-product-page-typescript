@@ -23,11 +23,13 @@ export function ProductsList() {
     });
   };
 
-  const storageItem = (element: IProduct, index: number) => {
-    localStorage.setItem(`Product ${index + 1}`, JSON.stringify(element));
-  };
+  // Save products list in localStorage
 
-  productsList.forEach(storageItem);
+  // const storageItem = (element: IProduct, index: number) => {
+  //   localStorage.setItem(`Product ${index + 1}`, JSON.stringify(element));
+  // };
+
+  // productsList.forEach(storageItem);
 
   useEffect(() => {
     getProductList();

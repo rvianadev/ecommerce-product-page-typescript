@@ -31,12 +31,7 @@ export function ProductInformationContainer() {
       </div>
       <div className="flex justify-between">
         <div className="flex justify-around items-center rounded-[0.625rem] h-14 bg-[#F6F8FD] w-[35.28%] max-w-[9.8125rem]">
-          <button
-            className="p-4"
-            onClick={() => {
-              decreaseAmount();
-            }}
-          >
+          <button className="p-4" onClick={() => decreaseAmount()}>
             <a href="#">
               <svg
                 width="12"

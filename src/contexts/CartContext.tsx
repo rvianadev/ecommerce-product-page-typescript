@@ -8,6 +8,7 @@ export interface ICartContextData {
   increaseAmount: () => void;
   decreaseAmount: () => void;
   handleCart: () => void;
+  updateCart: () => void;
 }
 
 export const CartContext = createContext<ICartContextData>({
@@ -18,6 +19,7 @@ export const CartContext = createContext<ICartContextData>({
   increaseAmount: () => {},
   decreaseAmount: () => {},
   handleCart: () => {},
+  updateCart: () => {},
 });
 
 export function CartProvider({ children }: any) {
@@ -51,6 +53,10 @@ export function CartProvider({ children }: any) {
     localStorage.setItem('cartAmount', `${total}`);
   };
 
+  const updateCart = () => {
+    setCartAmount(0);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -61,6 +67,7 @@ export function CartProvider({ children }: any) {
         increaseAmount,
         decreaseAmount,
         handleCart,
+        updateCart,
       }}
     >
       {children}

@@ -1,15 +1,22 @@
+import { useEffect, useState } from 'react';
+
 import { useCart } from 'hooks';
 import img1Small from '../../assets/images/image-product-1-thumbnail.jpg';
 
 export function CartModal() {
-  const { isOpen, handleCart } = useCart();
+  const { isOpen, cartAmount, updateCart } = useCart();
+  const [cartState, setCartState] = useState(cartAmount);
 
-  const cartAmount = localStorage.getItem('cartAmount');
-  const currentAmount: number = cartAmount ? parseInt(cartAmount, 10) : 0;
-  const totalPrice = (currentAmount * 125).toFixed(2);
+  const totalPrice = (cartAmount * 125).toFixed(2);
+
+  useEffect(() => {
+    setCartState(cartAmount);
+  }, [cartAmount]);
 
   const clearCart = () => {
     localStorage.removeItem('cartAmount');
+    setCartState(0);
+    updateCart();
   };
 
   return (
@@ -23,7 +30,7 @@ export function CartModal() {
         </span>
       </header>
       <div className="flex flex-col gap-6 justify-center items-center flex-1 pl-6 pr-6">
-        {currentAmount === 0 ? (
+        {cartAmount === 0 ? (
           <span className="text-base font-bold leading-[1.625rem] text-gray">
             Your cart is empty.
           </span>
@@ -40,8 +47,8 @@ export function CartModal() {
                     Fall Limited Edition Sneakers
                   </span>
                   <div>
-                    <span className="text-gray">$125.00 x {currentAmount}</span>
-                    <span className="font-bold"> ${totalPrice}</span>
+                    <span className="text-gray">$125.00 x {cartAmount}</span>
+                    <span className="font-bold">&nbsp; ${totalPrice}</span>
                   </div>
                 </div>
 
