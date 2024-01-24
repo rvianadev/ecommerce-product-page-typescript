@@ -1,21 +1,20 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 import { useCart } from 'hooks';
 import img1Small from '../../assets/images/image-product-1-thumbnail.jpg';
 
 export function CartModal() {
   const { isOpen, cartAmount, updateCart } = useCart();
-  const [cartState, setCartState] = useState(cartAmount);
+  // const [cartState, setCartState] = useState(cartAmount);
 
   const totalPrice = (cartAmount * 125).toFixed(2);
 
-  useEffect(() => {
-    setCartState(cartAmount);
-  }, [cartAmount]);
+  // useEffect(() => {
+  //   setCartState(cartAmount);
+  // }, [cartAmount]);
 
   const clearCart = () => {
     localStorage.removeItem('cartAmount');
-    setCartState(0);
     updateCart();
   };
 
