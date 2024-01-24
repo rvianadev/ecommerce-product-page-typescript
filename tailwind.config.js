@@ -10,6 +10,7 @@ module.exports = {
       black: '#1D2026',
       gray: '#69707D',
       'gray-50': '#B6BCC8',
+      'gray-40': '#c3cad9',
     },
     extend: {
       spacing: {
