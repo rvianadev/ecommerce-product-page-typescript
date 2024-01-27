@@ -1,10 +1,12 @@
 import logo from '../../assets/images/logo.svg';
+import menu from '../../assets/images/icon-menu.svg';
 
 export function NavMenu() {
   return (
     <nav className="flex items-center">
+      <img src={menu} alt="mobile menu" className="lg:hidden pr-4 sm:pr-8" />
       <img src={logo} alt="sneakers logo" className="h-5 pr-14" />
-      <ul className="flex gap-8">
+      <ul className="hidden lg:flex gap-8">
         <li className="relative">
           <a
             href="/"
