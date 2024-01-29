@@ -10,7 +10,7 @@ export function App() {
       <Container>
         <Header />
         <CartModal />
-        <div className="container xl:max-w-[63.4375rem] mx-auto flex justify-center">
+        <div className="w-full xl:max-w-[63.4375rem] mx-auto flex justify-center">
           <Outlet />
         </div>
       </Container>

@@ -18,7 +18,7 @@ export function ProductInformationContainer() {
           the weather can offer.
         </p>
       </div>
-      <div className="flex flex-wrap items-center w-[40%] pb-8">
+      <div className="flex flex-wrap items-center w-[65%] lg:w-[40%] pb-8">
         <span className="block text-[1.75rem] text-black font-bold pr-4">
           $125.00
         </span>
