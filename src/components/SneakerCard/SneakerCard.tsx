@@ -8,7 +8,7 @@ export function SneakerCard() {
         <img
           src={sneakerThumbnail}
           alt="Product thumbnail"
-          className="max-w-[9.375rem] rounded-[0.9375rem] hover:border-2 hover:border-primary hover:opacity-70"
+          className="max-w-[6.25rem] sm:max-w-[9.375rem] rounded-[0.9375rem] hover:border-2 hover:border-primary hover:opacity-70"
         />
       </a>
     </div>

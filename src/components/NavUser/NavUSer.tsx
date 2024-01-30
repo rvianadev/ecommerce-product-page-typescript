@@ -8,7 +8,7 @@ export function NavUser() {
   const cartAmount: number = amount ? parseInt(amount, 10) : 0;
 
   return (
-    <nav className="relative flex items-center gap-12">
+    <nav className="relative flex items-center gap-5 sm:gap-12">
       <a
         href="#"
         onClick={() => {
@@ -38,7 +38,7 @@ export function NavUser() {
         <img
           src={avatar}
           alt="user avatar"
-          className="size-12.5 border-2 border-white rounded-full hover:border-primary"
+          className="size-[2.5rem] sm:size-[3.125rem] border-2 border-white rounded-full hover:border-primary"
         />
       </a>
     </nav>

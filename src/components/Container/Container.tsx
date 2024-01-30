@@ -4,7 +4,7 @@ type Props = {
 
 export function Container({ children }: Props) {
   return (
-    <main className="container mx-auto w-desktop relative mt-7">
+    <main className="w-[90%] xl:w-desktop mx-auto relative mt-7">
       {children}
     </main>
   );

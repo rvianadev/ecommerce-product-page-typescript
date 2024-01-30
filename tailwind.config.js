@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
@@ -23,6 +26,10 @@ module.exports = {
         'product-container': '63.4375rem', // Product container width
         '2.2/5': '44%',
       },
+    },
+    screens: {
+      xs: '320px',
+      ...defaultTheme.screens,
     },
   },
   plugins: [],

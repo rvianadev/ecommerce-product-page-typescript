@@ -18,7 +18,7 @@ export function ProductInformationContainer() {
           the weather can offer.
         </p>
       </div>
-      <div className="flex flex-wrap items-center w-[40%] pb-8">
+      <div className="flex flex-wrap items-center w-[65%] lg:w-[40%] pb-8">
         <span className="block text-[1.75rem] text-black font-bold pr-4">
           $125.00
         </span>
@@ -29,8 +29,8 @@ export function ProductInformationContainer() {
           $250.00
         </span>
       </div>
-      <div className="flex justify-between">
-        <div className="flex justify-around items-center rounded-[0.625rem] h-14 bg-[#F6F8FD] w-[35.28%] max-w-[9.8125rem]">
+      <div className="flex flex-wrap justify-between">
+        <div className="flex justify-around items-center rounded-[0.625rem] h-14 bg-[#F6F8FD] xs:max-[639px]:w-full sm:w-[35.28%] sm:max-w-[9.8125rem]">
           <button className="p-4" onClick={() => decreaseAmount()}>
             <a href="#">
               <svg
@@ -73,7 +73,7 @@ export function ProductInformationContainer() {
         </div>
 
         <button
-          className="flex justify-evenly items-center h-14 bg-primary hover:bg-primary-light rounded-[0.625rem] w-[61.12%] max-w-[17rem]"
+          className="flex justify-evenly items-center h-14 bg-primary hover:bg-primary-light rounded-[0.625rem] xs:max-[639px]:w-full xs:max-[639px]:mt-4 sm:w-[61.12%] sm:max-w-[17rem]"
           onClick={() => {
             handleCart();
           }}

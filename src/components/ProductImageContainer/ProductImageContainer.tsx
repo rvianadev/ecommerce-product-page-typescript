@@ -18,15 +18,15 @@ export function ProductImageContainer() {
   };
 
   return (
-    <div className="flex flex-col gap-8 w-2.2/5 max-w-[27.8125rem] rounded-[0.9375rem]">
-      <div id="large-image" className="rounded-[0.9375rem]">
+    <div className="flex flex-col gap-8 w-[44%] max-w-[27.8125rem] rounded-[0.9375rem]">
+      <div id="large-image" className="rounded-[0.9375rem] max-w-full">
         <img src={img1} alt="Product" className="rounded-[0.9375rem]" />
       </div>
-      <div className="flex gap-[1.94rem] rounded-[0.625rem]">
+      <div className="flex flex-wrap justify-evenly md:justify-between rounded-[0.625rem] max-w-full">
         <img
           src={img1Small}
           alt="Product thumbnail"
-          className="w-[5.5rem] rounded-[0.625rem] border-2 border-white hover:cursor-pointer hover:border-primary"
+          className="w-1/2 max-w-[5.5rem] rounded-[0.625rem] border-2 border-white hover:cursor-pointer hover:border-primary mb-2"
           onClick={() => {
             showLargeImage(img1);
           }}
@@ -34,7 +34,7 @@ export function ProductImageContainer() {
         <img
           src={img2Small}
           alt="Product thumbnail"
-          className="w-[5.5rem] rounded-[0.625rem] border-2 border-white hover:cursor-pointer hover:border-primary"
+          className="w-1/2 max-w-[5.5rem] rounded-[0.625rem] border-2 border-white hover:cursor-pointer hover:border-primary mb-2"
           onClick={() => {
             showLargeImage(img2);
           }}
@@ -42,7 +42,7 @@ export function ProductImageContainer() {
         <img
           src={img3Small}
           alt="Product thumbnail"
-          className="w-[5.5rem] rounded-[0.625rem] border-2 border-white hover:cursor-pointer hover:border-primary"
+          className="w-1/2 max-w-[5.5rem] rounded-[0.625rem] border-2 border-white hover:cursor-pointer hover:border-primary mb-2"
           onClick={() => {
             showLargeImage(img3);
           }}
@@ -50,7 +50,7 @@ export function ProductImageContainer() {
         <img
           src={img4Small}
           alt="Product thumbnail"
-          className="w-[5.5rem] rounded-[0.625rem] border-2 border-white hover:cursor-pointer hover:border-primary"
+          className="w-1/2 max-w-[5.5rem] rounded-[0.625rem] border-2 border-white hover:cursor-pointer hover:border-primary mb-2"
           onClick={() => {
             showLargeImage(img4);
           }}
