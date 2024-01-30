@@ -4,8 +4,8 @@ import avatar from '../../assets/images/image-avatar.png';
 export function NavUser() {
   const { toggleCart } = useCart();
 
-  const cartAmount = localStorage.getItem('cartAmount');
-  const currentAmount: number = cartAmount ? parseInt(cartAmount, 10) : 0;
+  const amount = localStorage.getItem('amount');
+  const cartAmount: number = amount ? parseInt(amount, 10) : 0;
 
   return (
     <nav className="relative flex items-center gap-12">
@@ -28,9 +28,9 @@ export function NavUser() {
         </svg>
       </a>
 
-      {currentAmount > 0 ? (
+      {cartAmount > 0 ? (
         <span className="block text-[0.75rem] text-white font-bold px-2 rounded-full bg-primary absolute top-1.5 left-2">
-          {currentAmount}
+          {cartAmount}
         </span>
       ) : null}
 

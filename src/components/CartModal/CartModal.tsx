@@ -5,7 +5,6 @@ import img1Small from '../../assets/images/image-product-1-thumbnail.jpg';
 
 export function CartModal() {
   const { isOpen, cartAmount, updateCart } = useCart();
-  // const [cartState, setCartState] = useState(cartAmount);
 
   const totalPrice = (cartAmount * 125).toFixed(2);
 
@@ -14,7 +13,7 @@ export function CartModal() {
   // }, [cartAmount]);
 
   const clearCart = () => {
-    localStorage.removeItem('cartAmount');
+    localStorage.removeItem('amount');
     updateCart();
   };
 
