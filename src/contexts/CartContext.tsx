@@ -26,7 +26,7 @@ export function CartProvider({ children }: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [amount, setAmount] = useState(0);
 
-  const storedCartAmount = localStorage.getItem('cartAmount');
+  const storedCartAmount = localStorage.getItem('amount');
   const [cartAmount, setCartAmount] = useState(
     storedCartAmount ? parseInt(storedCartAmount, 10) : 0
   );
@@ -46,11 +46,8 @@ export function CartProvider({ children }: any) {
   };
 
   const handleCart = () => {
-    const currentAmount = localStorage.getItem('cartAmount');
-
-    const total = amount + (currentAmount ? parseInt(currentAmount, 10) : 0);
-    setCartAmount(total);
-    localStorage.setItem('cartAmount', `${total}`);
+    setCartAmount(amount);
+    localStorage.setItem('amount', `${amount}`);
   };
 
   const updateCart = () => {
