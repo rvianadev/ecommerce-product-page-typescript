@@ -7,7 +7,5 @@ export * from './ProductDetails';
 export * from './ProductsList';
 export * from './ProductsListCard';
 export * from './Sneaker';
-export * from './SneakerImageContainer';
-export * from './SneakerInformationContainer';
 export * from './SneakerCard';
 export * from './Title';
