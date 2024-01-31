@@ -8,7 +8,7 @@ import img2Small from '../../assets/images/image-product-2-thumbnail.jpg';
 import img3Small from '../../assets/images/image-product-3-thumbnail.jpg';
 import img4Small from '../../assets/images/image-product-4-thumbnail.jpg';
 
-export function ProductImageContainer() {
+export function SneakerImageContainer() {
   const showLargeImage = (image: any) => {
     const container = document.getElementById('large-image');
 
