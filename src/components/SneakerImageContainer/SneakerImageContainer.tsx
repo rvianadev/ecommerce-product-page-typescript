@@ -10,10 +10,10 @@ import img4Small from '../../assets/images/image-product-4-thumbnail.jpg';
 
 export function SneakerImageContainer() {
   const showLargeImage = (image: any) => {
-    const container = document.getElementById('large-image');
+    const largeImageContainer = document.getElementById('large-image');
 
-    if (container) {
-      container.innerHTML = `<img src=${image} alt='Product' class='rounded-[0.9375rem]'/>`;
+    if (largeImageContainer) {
+      largeImageContainer.innerHTML = `<img src=${image} alt='Product' class='rounded-[0.9375rem]'/>`;
     }
   };
 
