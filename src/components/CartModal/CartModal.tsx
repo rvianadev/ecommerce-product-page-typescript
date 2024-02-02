@@ -1,21 +1,43 @@
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { useCart } from 'hooks';
 import img1Small from '../../assets/images/image-product-1-thumbnail.jpg';
+import api from 'api/api';
 
 export function CartModal() {
   const { isOpen, cartAmount, updateCart } = useCart();
+  const [url, setUrl] = useState(undefined);
+  const { productId } = useParams();
+
+  const id = parseInt(productId || '0', 10) - 1;
 
   const totalPrice = (cartAmount * 125).toFixed(2);
-
-  // useEffect(() => {
-  //   setCartState(cartAmount);
-  // }, [cartAmount]);
 
   const clearCart = () => {
     localStorage.removeItem('amount');
     updateCart();
   };
+
+  const productUrl = async () => {
+    const response = await api.get(`photos?id=${id}`);
+    if (response.data && response.data.length > 0) {
+      return response.data[0].url;
+    } else {
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    const fetchedData = async () => {
+      if (productId) {
+        const fetchedUrl = await productUrl();
+        setUrl(fetchedUrl);
+      }
+    };
+
+    fetchedData();
+  }, [productId]);
 
   return (
     <div
@@ -36,10 +58,7 @@ export function CartModal() {
           <>
             <div className="flex flex-col">
               <div className="flex flex-wrap gap-x-4">
-                <img
-                  src={img1Small}
-                  className="max-w-[3.125rem] rounded inline"
-                />
+                <img src={url} className="max-w-[3.125rem] rounded inline" />
                 <div className="flex flex-col">
                   <span className="text-gray">
                     Fall Limited Edition Sneakers

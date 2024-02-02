@@ -3,8 +3,8 @@ import sneakerThumbnail from '../../assets/images/image-product-1-thumbnail.jpg'
 export function SneakerCard() {
   return (
     <div className="flex flex-col items-center">
-      <h2 className="text-black text-lg font-semibold pb-4">Sneaker</h2>
-      <a href={`/product/sneaker`}>
+      <h2 className="text-black text-lg font-semibold pb-4">Product 1</h2>
+      <a href={`/product/1`}>
         <img
           src={sneakerThumbnail}
           alt="Product thumbnail"

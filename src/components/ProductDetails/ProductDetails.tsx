@@ -10,8 +10,10 @@ export function ProductDetails() {
 
   const { amount, increaseAmount, decreaseAmount, handleCart } = useCart();
 
+  const id = parseInt(productId || '0', 10) - 1;
+
   const productUrl = async () => {
-    const response = await api.get(`photos?id=${productId}`);
+    const response = await api.get(`photos?id=${id}`);
     return response.data[0].url;
   };
 

@@ -13,7 +13,7 @@ export const routes = createBrowserRouter([
         element: <ProductsList />,
       },
       {
-        path: 'product/sneaker',
+        path: 'product/1',
         element: <Sneaker />,
       },
       {
