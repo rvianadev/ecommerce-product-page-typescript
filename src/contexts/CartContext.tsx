@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
 export interface ICartContextData {
   isOpen: boolean;
   toggleCart: () => void;
@@ -11,7 +10,6 @@ export interface ICartContextData {
   handleCart: () => void;
   updateCart: () => void;
 }
-
 export interface ICartItem {
   title: string;
   id: string;
@@ -33,13 +31,8 @@ export function CartProvider({ children }: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [amount, setAmount] = useState(0);
   const { productId } = useParams();
-
-  const storedCartAmount = localStorage.getItem('amount');
-  const [cartAmount, setCartAmount] = useState(
-    storedCartAmount ? parseInt(storedCartAmount, 10) : 0
-  );
-
-  const cart: ICartItem[] = [];
+  const [cartAmount, setCartAmount] = useState(0);
+  const [cart, setCart] = useState<ICartItem[]>([]);
 
   const toggleCart = () => {
     setIsOpen(!isOpen);
@@ -70,14 +63,18 @@ export function CartProvider({ children }: any) {
       quantity,
     };
 
-    cart.push(productDetails);
-
-    localStorage.setItem('cart', JSON.stringify(cart));
+    setCart((prevCart) => [...prevCart, productDetails]);
   };
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   const updateCart = () => {
     setCartAmount(0);
   };
+
+  console.log(cart);
 
   return (
     <CartContext.Provider
