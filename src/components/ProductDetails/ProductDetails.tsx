@@ -39,7 +39,10 @@ export function ProductDetails() {
           <span className="text-primary text-[0.8125rem] uppercase font-bold tracking-[0.125rem] block mb-[1.69rem]">
             sneaker company
           </span>
-          <h1 className="text-[2.75rem] font-bold leading-[3rem] text-black mb-8">
+          <h1
+            id="product-title"
+            className="text-[2.75rem] font-bold leading-[3rem] text-black mb-8"
+          >
             Product {productId}
           </h1>
           <p className="text-gray mb-7">

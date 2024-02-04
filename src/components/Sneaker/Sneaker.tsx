@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import { useCart } from 'hooks';
 
 import img1 from '../../assets/images/image-product-1.jpg';
@@ -12,6 +13,7 @@ import img4Small from '../../assets/images/image-product-4-thumbnail.jpg';
 
 export function Sneaker() {
   const { amount, increaseAmount, decreaseAmount, handleCart } = useCart();
+  const { productId } = useParams();
 
   const showLargeImage = (image: any) => {
     const largeImageContainer = document.getElementById('large-image');
@@ -68,7 +70,10 @@ export function Sneaker() {
           <span className="text-primary text-[0.8125rem] uppercase font-bold tracking-[0.125rem] block mb-[1.69rem]">
             sneaker company
           </span>
-          <h1 className="text-[2.75rem] font-bold leading-[3rem] text-black mb-8">
+          <h1
+            id="product-title"
+            className="text-[2.75rem] font-bold leading-[3rem] text-black mb-8"
+          >
             Fall Limited Edition Sneakers
           </h1>
           <p className="text-gray mb-7">

@@ -1,4 +1,5 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 export interface ICartContextData {
   isOpen: boolean;
@@ -9,6 +10,12 @@ export interface ICartContextData {
   decreaseAmount: () => void;
   handleCart: () => void;
   updateCart: () => void;
+}
+
+export interface ICartItem {
+  title: string;
+  id: string;
+  quantity: number;
 }
 
 export const CartContext = createContext<ICartContextData>({
@@ -25,11 +32,14 @@ export const CartContext = createContext<ICartContextData>({
 export function CartProvider({ children }: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [amount, setAmount] = useState(0);
+  const { productId } = useParams();
 
   const storedCartAmount = localStorage.getItem('amount');
   const [cartAmount, setCartAmount] = useState(
     storedCartAmount ? parseInt(storedCartAmount, 10) : 0
   );
+
+  const cart: ICartItem[] = [];
 
   const toggleCart = () => {
     setIsOpen(!isOpen);
@@ -48,6 +58,21 @@ export function CartProvider({ children }: any) {
   const handleCart = () => {
     setCartAmount(amount);
     localStorage.setItem('amount', `${amount}`);
+
+    const element = document.getElementById('product-title');
+    const title = element?.innerHTML ?? '';
+    const id = productId || '1';
+    const quantity = amount;
+
+    const productDetails: ICartItem = {
+      title,
+      id,
+      quantity,
+    };
+
+    cart.push(productDetails);
+
+    localStorage.setItem('cart', JSON.stringify(cart));
   };
 
   const updateCart = () => {
