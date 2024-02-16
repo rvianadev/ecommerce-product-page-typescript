@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
 export interface ICartContextData {
   isOpen: boolean;
@@ -32,7 +32,7 @@ export function CartProvider({ children }: any) {
   const [amount, setAmount] = useState(0);
   const { productId } = useParams();
   const [cartAmount, setCartAmount] = useState(0);
-  const [cart, setCart] = useState<ICartItem[]>([]);
+  const cart: ICartItem[] = [];
 
   const toggleCart = () => {
     setIsOpen(!isOpen);
@@ -63,18 +63,15 @@ export function CartProvider({ children }: any) {
       quantity,
     };
 
-    setCart((prevCart) => [...prevCart, productDetails]);
-  };
+    cart.push(productDetails);
+    console.log(cart);
 
-  useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
+  };
 
   const updateCart = () => {
     setCartAmount(0);
   };
-
-  console.log(cart);
 
   return (
     <CartContext.Provider
