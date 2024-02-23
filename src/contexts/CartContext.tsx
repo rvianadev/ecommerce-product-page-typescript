@@ -71,3 +71,5 @@ export function CartProvider({ children }: any) {
     </CartContext.Provider>
   );
 }
+
+// Apague este comentario
